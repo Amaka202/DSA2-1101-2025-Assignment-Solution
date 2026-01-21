@@ -1,15 +1,15 @@
 def isPalindrome(word: str) -> bool:
     """
-    Recursive palindrome check.
+    Recursive palindrome check (case-insensitive).
     Returns True if word reads the same forwards and backwards, else False.
-
     Assumption: input is a single word (no spaces).
-    Case-sensitive by default (so "Pop" is not the same as "pop").
     """
-    if len(word) <= 1:
+    w = word.lower()
+
+    if len(w) <= 1:
         return True
 
-    if word[0] != word[-1]:
+    if w[0] != w[-1]:
         return False
 
-    return isPalindrome(word[1:-1])
+    return isPalindrome(w[1:-1])
